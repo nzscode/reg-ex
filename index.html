@@ -3,635 +3,832 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet"
         />
-
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="prism2.css" />
         <title>Code Snippets - RegEx</title>
     </head>
-    <body class="lato-regular">
-        <h1>RegEx Snippets</h1>
-        <div id="rx1">
-            <h2>RegEx Basics</h2>
-            <h3>Flags</h3>
-            <ul>
-                <li class="title">No Flags</li>
-                <ul>
-                    <li>Returns the first pattern match, case sensitive</li>
-                    <ul>
-                        <li>
-                            Expression:
-                            <p class="reg">/cat/</p>
-                            <img src="images/image2.png" alt="" />
-                        </li>
-                    </ul>
-                </ul>
-                <li class="title">Global</li>
-                <ul>
-                    <li>Allows matching anywhere in the string</li>
-                    <ul>
-                        <li>
-                            Expression:
-                            <p class="reg">/cat/g</p>
-                            <img src="images/image1.png" alt="" />
-                            <img src="images/image3.png" alt="" />
-                        </li>
-                    </ul>
-                </ul>
-                <li class="title">Case Insensitive</li>
-                <ul>
-                    <li>
-                        Allows matching anywhere in the string, without matching
-                        case
-                    </li>
-                    <ul>
-                        <li>
-                            Expression:
-                            <p class="reg">/cat/i</p>
-                            <img src="images/image4.png" alt="" />
-                        </li>
-                    </ul>
-                </ul>
-                <li class="title">Multiline</li>
-                <ul>
-                    <li>Allows matching in multiple strings</li>
-                    <ul>
-                        <li>
-                            Expression:
-                            <p class="reg">/cat/m</p>
+    <body>
+        <!-- NAVIGATION MENU - SIDE OPEN -->
+        <header>
+            <div id="title-bar-backing"></div>
+            <h1 id="title-bar">
+                <span
+                    id="nav-hamburger"
+                    style="cursor: pointer"
+                    onclick="openNav()"
+                    >&#9776;</span
+                >
+                <span id="page-title">Javascript Main Page</span>
+            </h1>
+
+            <div id="mySidenav" class="sidenav">
+                <a
+                    href="javascript:void(0)"
+                    class="closebtn"
+                    onclick="closeNav()"
+                    >&times;</a
+                >
+                <nav id="nav"></nav>
+                <div class="space-block"></div>
+            </div>
+        </header>
+        <main>
+            <article>
+                <section>
+                    <h2 class="lvl2" id="regex-basics">RegEx Basics</h2>
+                    <section>
+                        <h3 class="lvl3" id="flags">Flags</h3>
+                        <ul>
+                            <li class="title">No Flags</li>
+                            <ul>
+                                <li>
+                                    Returns the first pattern match, case
+                                    sensitive
+                                </li>
+                                <ul>
+                                    <li>
+                                        Expression:
+                                        <p class="reg">/cat/</p>
+                                        <img src="images/image2.png" alt="" />
+                                    </li>
+                                </ul>
+                            </ul>
+                            <li class="title">Global</li>
+                            <ul>
+                                <li>Allows matching anywhere in the string</li>
+                                <ul>
+                                    <li>
+                                        Expression:
+                                        <p class="reg">/cat/g</p>
+                                        <img src="images/image1.png" alt="" />
+                                        <img src="images/image3.png" alt="" />
+                                    </li>
+                                </ul>
+                            </ul>
+                            <li class="title">Case Insensitive</li>
+                            <ul>
+                                <li>
+                                    Allows matching anywhere in the string,
+                                    without matching case
+                                </li>
+                                <ul>
+                                    <li>
+                                        Expression:
+                                        <p class="reg">/cat/i</p>
+                                        <img src="images/image4.png" alt="" />
+                                    </li>
+                                </ul>
+                            </ul>
+                            <li class="title">Multiline</li>
+                            <ul>
+                                <li>Allows matching in multiple strings</li>
+                                <ul>
+                                    <li>
+                                        Expression:
+                                        <p class="reg">/cat/m</p>
+                                        <img
+                                            src="images/Screenshot 2024-04-18 090528.png"
+                                            alt=""
+                                        />
+                                    </li>
+                                </ul>
+                            </ul>
+                        </ul>
+                        <h3>Matching the first word, case sensitive</h3>
+                        <ul>
                             <img
-                                src="images/Screenshot 2024-04-18 090528.png"
+                                src="images/Screenshot 2024-04-16 193951.png"
                                 alt=""
                             />
-                        </li>
-                    </ul>
-                </ul>
-            </ul>
-            <h3>Matching the first word, case sensitive</h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 193951.png" alt="" />
-            </ul>
-            <h3>Matching one or more of the token</h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 193812.png" alt="" />
-            </ul>
-            <h3>
-                Matching one or more of the first token and optionally match the
-                second token(the token in front of the ?)
-            </h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 194519.png" alt="" />
-            </ul>
-            <h3>
-                Matching one or more of the token proceeding the *, as many
-                times as possible.
-            </h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 194639.png" alt="" />
-            </ul>
-            <h3>Matching any character, but can not match a new line</h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 194852.png" alt="" />
-                <img src="images/Screenshot 2024-04-16 195630.png" alt="" />
-            </ul>
-            <h3>
-                Matching escaped characters (. / * $ &lt; &gt; ^ ? + ( ) [ ] { }
-                | )
-            </h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 200140.png" alt="" />
-            </ul>
-            <h3>Match any word character</h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 200453.png" alt="" />
-            </ul>
-            <h3>Match any white space character</h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 200556.png" alt="" />
-            </ul>
-            <h3>Matching anything that is not a whitespace</h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 200626.png" alt="" />
-            </ul>
-            <h3>Matching anything that is not a word</h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 200714.png" alt="" />
-            </ul>
-            <h3>
-                Catching words that are longer than a certain number of
-                characters
-            </h3>
-            <ul>
-                <li>
-                    First number is how many minimum characters the word must
-                    have
-                </li>
-                <img src="images/Screenshot 2024-04-16 201253.png" alt="" />
-                <li>
-                    , a <i><u>,(comma)</u></i> only, says first number or more
-                </li>
-                <img src="images/Screenshot 2024-04-16 200931.png" alt="" />
+                        </ul>
+                        <h3>Matching one or more of the token</h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 193812.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>
+                            Matching one or more of the first token and
+                            optionally match the second token(the token in front
+                            of the ?)
+                        </h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 194519.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>
+                            Matching one or more of the token proceeding the *,
+                            as many times as possible.
+                        </h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 194639.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>
+                            Matching any character, but can not match a new line
+                        </h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 194852.png"
+                                alt=""
+                            />
+                            <img
+                                src="images/Screenshot 2024-04-16 195630.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>
+                            Matching escaped characters (. / * $ &lt; &gt; ^ ? +
+                            ( ) [ ] { } | )
+                        </h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 200140.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Match any word character</h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 200453.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Match any white space character</h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 200556.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Matching anything that is not a whitespace</h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 200626.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Matching anything that is not a word</h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 200714.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>
+                            Catching words that are longer than a certain number
+                            of characters
+                        </h3>
+                        <ul>
+                            <li>
+                                First number is how many minimum characters the
+                                word must have
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 201253.png"
+                                alt=""
+                            />
+                            <li>
+                                , a <i><u>,(comma)</u></i> only, says first
+                                number or more
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 200931.png"
+                                alt=""
+                            />
 
-                <li>a second number while optional says upto.</li>
-                <img src="images/Screenshot 2024-04-16 201347.png" alt="" />
-            </ul>
-            <h3>
-                Finding a word of a certain number that begins with either token
-            </h3>
-            <ul>
-                <li>
-                    matches any of the characters within the square brackets,
-                    and then matches the remaining tokens
-                </li>
-                <img src="images/Screenshot 2024-04-16 201731.png" alt="" />
-                <li>Matches any and all characters between a to z</li>
-                <img src="images/Screenshot 2024-04-16 201855.png" alt="" />
-                <li>
-                    Matches any of the characters bewtween square brackets
-                    between a to z, or uppercase A to Z, or 0 to 9
-                </li>
-                <img src="images/Screenshot 2024-04-16 202026.png" alt="" />
-            </ul>
-            <h3>Look for the first or second expression</h3>
-            <ul>
-                <li>Look for C or can</li>
-                <img src="images/Screenshot 2024-04-16 202411.png" alt="" />
-            </ul>
-            <h3>Look for a group</h3>
-            <ul>
-                <li>Look for the first or second expression within a group</li>
-                <img src="images/Screenshot 2024-04-16 202501.png" alt="" />
-                <li>
-                    match any word where there is two or 3, l's or e's, and
-                    followed by a t
-                </li>
-                <img src="images/Screenshot 2024-04-16 202928.png" alt="" />
-            </ul>
-            <h3>Matching at the beginning of the line</h3>
-            <ul>
-                <li>
-                    using the caret (<i><u>^</u></i
-                    >)
-                </li>
-                <img src="images/Screenshot 2024-04-16 203217.png" alt="" />
-                <li>
-                    Will only match a single line, if we want for both lines we
-                    have to use the multiline flag.
-                </li>
-                <img src="images/Screenshot 2024-04-16 203217.png" />
-            </ul>
-            <h3>Matching the end of the sentence</h3>
-            <ul>
-                <li>
-                    Using the <i><u>$</u></i> sign
-                </li>
-                <img src="images/Screenshot 2024-04-16 203624.png" alt="" />
-            </ul>
-            <h3>Positive Look Behind</h3>
-            <ul>
-                <li>
-                    Used to look behind and then get the first period, that
-                    follows
-                </li>
-                <img src="images/Screenshot 2024-04-16 204136.png" alt="" />
-            </ul>
-            <h3>Negative Look Behind</h3>
-            <ul>
-                <li>
-                    Matches everything excpet the spaces that have
-                    <i><u>is</u></i> after it.
-                </li>
-                <img src="images/Screenshot 2024-04-16 204420.png" alt="" />
-            </ul>
-            <h3>
-                Getting any character before a certain selection of characters
-            </h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 204646.png" alt="" />
-            </ul>
-            <h3>GEtting any character excpet the token character</h3>
-            <ul>
-                <img src="images/Screenshot 2024-04-16 204753.png" alt="" />
-            </ul>
-            <h3>Matching digits</h3>
-            <ul>
-                <li>Matching digits only</li>
-                <img src="images/Screenshot 2024-04-16 205038.png" alt="" />
-            </ul>
-            <h3>Matching digits which may have a dash between them</h3>
-            <ul>
-                <li>
-                    Matching 2-3 digits possibly followed by a dash, then
-                    followed by 3-5 digits
-                </li>
-                <img src="images/Screenshot 2024-04-16 210357.png" alt="" />
-                <li>
-                    Matching 2-3 digits possibly followed by a dash, then
-                    followed by 3-5 digits, but matching the first 2-3 digits as
-                    a group
-                </li>
-                <img src="images/Screenshot 2024-04-16 210631.png" alt="" />
-                <li>
-                    Matching 2-3 digits possibly followed by a space or dash,
-                    then followed by 3-5 digits, but matching the first 2-3
-                    digits as a group
-                </li>
-                <img src="images/Screenshot 2024-04-16 210749.png" alt="" />
-                <li>
-                    Matching 2-3 digits possibly inside parentheses followed by
-                    a space or dash, then followed by 3-5 digits, but matching
-                    the first 2-3 digits as a group and naming the group id_code
-                </li>
-                <img src="images/Screenshot 2024-04-16 211521.png" alt="" />
-                <li>
-                    Matching 2-3 digits possibly inside parentheses followed by
-                    a space or dash, then followed by 3-5 digits, but matching
-                    the first 2-3 digits as a group and naming the group
-                    id_code, which could also have a plus or digit of 1-3 length
-                    before the group
-                </li>
-                <img src="images/Screenshot 2024-04-16 212138.png" alt="" />
-            </ul>
-            <h3>Naming groups</h3>
-            <ul>
-                <li>Naming the groups</li>
-                <img src="images/Screenshot 2024-04-16 211054.png" alt="" />
-            </ul>
-            <h3>Non-Capturing Groups</h3>
-            <ul>
-                <li>
-                    Do not capture the group that will start with a + followed
-                    by 1 to 3 digits, proceeded by possibly either a space or a
-                    dash.
-                </li>
-                <li>
-                    In the below example
-                    <span style="background-color: lightpink">
-                        capture the group that will start with a + followed by 1
-                        to 3 digits
-                    </span>
-                    but
-                    <span style="background-color: lightskyblue">
-                        DO NOT capture the possible space or dash that may come
-                        after </span
-                    >. (<span style="background-color: lightskyblue">?:</span
-                    ><span style="background-color: lightpink">(\+\d{1,3})</span
-                    ><span style="background-color: lightskyblue">[ -]</span>)?
-                </li>
-                <img src="images/Screenshot 2024-04-17 083257.png" alt="" />
-            </ul>
-        </div>
+                            <li>a second number while optional says upto.</li>
+                            <img
+                                src="images/Screenshot 2024-04-16 201347.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>
+                            Finding a word of a certain number that begins with
+                            either token
+                        </h3>
+                        <ul>
+                            <li>
+                                matches any of the characters within the square
+                                brackets, and then matches the remaining tokens
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 201731.png"
+                                alt=""
+                            />
+                            <li>
+                                Matches any and all characters between a to z
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 201855.png"
+                                alt=""
+                            />
+                            <li>
+                                Matches any of the characters bewtween square
+                                brackets between a to z, or uppercase A to Z, or
+                                0 to 9
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 202026.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Look for the first or second expression</h3>
+                        <ul>
+                            <li>Look for C or can</li>
+                            <img
+                                src="images/Screenshot 2024-04-16 202411.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Look for a group</h3>
+                        <ul>
+                            <li>
+                                Look for the first or second expression within a
+                                group
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 202501.png"
+                                alt=""
+                            />
+                            <li>
+                                match any word where there is two or 3, l's or
+                                e's, and followed by a t
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 202928.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Matching at the beginning of the line</h3>
+                        <ul>
+                            <li>
+                                using the caret (<i><u>^</u></i
+                                >)
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 203217.png"
+                                alt=""
+                            />
+                            <li>
+                                Will only match a single line, if we want for
+                                both lines we have to use the multiline flag.
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 203217.png"
+                            />
+                        </ul>
+                        <h3>Matching the end of the sentence</h3>
+                        <ul>
+                            <li>
+                                Using the <i><u>$</u></i> sign
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 203624.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Positive Look Behind</h3>
+                        <ul>
+                            <li>
+                                Used to look behind and then get the first
+                                period, that follows
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 204136.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Negative Look Behind</h3>
+                        <ul>
+                            <li>
+                                Matches everything excpet the spaces that have
+                                <i><u>is</u></i> after it.
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 204420.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>
+                            Getting any character before a certain selection of
+                            characters
+                        </h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 204646.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>
+                            GEtting any character excpet the token character
+                        </h3>
+                        <ul>
+                            <img
+                                src="images/Screenshot 2024-04-16 204753.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Matching digits</h3>
+                        <ul>
+                            <li>Matching digits only</li>
+                            <img
+                                src="images/Screenshot 2024-04-16 205038.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>
+                            Matching digits which may have a dash between them
+                        </h3>
+                        <ul>
+                            <li>
+                                Matching 2-3 digits possibly followed by a dash,
+                                then followed by 3-5 digits
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 210357.png"
+                                alt=""
+                            />
+                            <li>
+                                Matching 2-3 digits possibly followed by a dash,
+                                then followed by 3-5 digits, but matching the
+                                first 2-3 digits as a group
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 210631.png"
+                                alt=""
+                            />
+                            <li>
+                                Matching 2-3 digits possibly followed by a space
+                                or dash, then followed by 3-5 digits, but
+                                matching the first 2-3 digits as a group
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 210749.png"
+                                alt=""
+                            />
+                            <li>
+                                Matching 2-3 digits possibly inside parentheses
+                                followed by a space or dash, then followed by
+                                3-5 digits, but matching the first 2-3 digits as
+                                a group and naming the group id_code
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 211521.png"
+                                alt=""
+                            />
+                            <li>
+                                Matching 2-3 digits possibly inside parentheses
+                                followed by a space or dash, then followed by
+                                3-5 digits, but matching the first 2-3 digits as
+                                a group and naming the group id_code, which
+                                could also have a plus or digit of 1-3 length
+                                before the group
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-16 212138.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Naming groups</h3>
+                        <ul>
+                            <li>Naming the groups</li>
+                            <img
+                                src="images/Screenshot 2024-04-16 211054.png"
+                                alt=""
+                            />
+                        </ul>
+                        <h3>Non-Capturing Groups</h3>
+                        <ul>
+                            <li>
+                                Do not capture the group that will start with a
+                                + followed by 1 to 3 digits, proceeded by
+                                possibly either a space or a dash.
+                            </li>
+                            <li>
+                                In the below example
+                                <span style="background-color: lightpink">
+                                    capture the group that will start with a +
+                                    followed by 1 to 3 digits
+                                </span>
+                                but
+                                <span style="background-color: lightskyblue">
+                                    DO NOT capture the possible space or dash
+                                    that may come after </span
+                                >. (<span style="background-color: lightskyblue"
+                                    >?:</span
+                                ><span style="background-color: lightpink"
+                                    >(\+\d{1,3})</span
+                                ><span style="background-color: lightskyblue"
+                                    >[ -]</span
+                                >)?
+                            </li>
+                            <img
+                                src="images/Screenshot 2024-04-17 083257.png"
+                                alt=""
+                            />
+                        </ul>
 
-        <h2>Below is a table of the most commonly used RegEx tokens</h2>
+                        <h2>
+                            Below is a table of the most commonly used RegEx
+                            tokens
+                        </h2>
 
-        <div class="flex-container">
-            <div class="row">
-                <div class="column flex-item-left">
-                    <h3>Anchors</h3>
-                    <table>
-                        <tr>
-                            <th>Tokens</th>
-                            <th>Definition</th>
-                        </tr>
-                        <tr>
-                            <td><b>^</b></td>
-                            <td>
-                                Start of string , or start of line in multiline
-                                pattern
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>$</b></td>
-                            <td>
-                                End of string, or end of line in multiline
-                                pattern
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="column flex-item-right">
-                    <h3>Character Classes</h3>
-                    <table>
-                        <tr>
-                            <th>Tokens</th>
-                            <th>Definition</th>
-                        </tr>
-                        <tr>
-                            <td><b>\s</b></td>
-                            <td>Whitespace</td>
-                        </tr>
-                        <tr>
-                            <td><b>\S</b></td>
-                            <td>Not whitespace</td>
-                        </tr>
-                        <tr>
-                            <td><b>\d</b></td>
-                            <td>Digit</td>
-                        </tr>
-                        <tr>
-                            <td><b>\D</b></td>
-                            <td>Not digit</td>
-                        </tr>
-                        <tr>
-                            <td><b>\w</b></td>
-                            <td>Word</td>
-                        </tr>
-                        <tr>
-                            <td><b>\W</b></td>
-                            <td>Not word</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column flex-item-left">
-                    <h3>Quantifiers</h3>
-                    <table>
-                        <tr>
-                            <th>Tokens</th>
-                            <th>Definition</th>
-                            <th>Example</th>
-                            <th>Explanation</th>
-                        </tr>
-                        <tr>
-                            <td><b>*</b></td>
-                            <td>0 or more</td>
-                            <td>{3}</td>
-                            <td>Exactly 3</td>
-                        </tr>
-                        <tr>
-                            <td><b>+</b></td>
-                            <td>1 or more</td>
-                            <td>{3,}</td>
-                            <td>3 or more</td>
-                        </tr>
-                        <tr>
-                            <td><b>?</b></td>
-                            <td>0 or 1</td>
-                            <td>{3,5}</td>
-                            <td>3, 4 or 5</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" class="merge">
-                                Add a ? to a quantifier to make ir
-                                ungreedy(means if it exists then the pattern
-                                applies)
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="column flex-item-right">
-                    <h3>Escape Sequences</h3>
-                    <table>
-                        <tr>
-                            <th>Tokens</th>
-                            <th>Definition</th>
-                        </tr>
-                        <tr>
-                            <td><b>\</b></td>
-                            <td>Escape following character</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="merge">
-                                Excaping allows the special character to be
-                                matched.
-                            </td>
-                        </tr>
-                        <tr>
-                            <table>
-                                <th colspan="4">Common Metacharacters</th>
+                        <div class="flex-container">
+                            <div class="row">
+                                <div class="column flex-item-left">
+                                    <h3>Anchors</h3>
+                                    <table>
+                                        <tr>
+                                            <th>Tokens</th>
+                                            <th>Definition</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>^</b></td>
+                                            <td>
+                                                Start of string , or start of
+                                                line in multiline pattern
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>$</b></td>
+                                            <td>
+                                                End of string, or end of line in
+                                                multiline pattern
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="column flex-item-right">
+                                    <h3>Character Classes</h3>
+                                    <table>
+                                        <tr>
+                                            <th>Tokens</th>
+                                            <th>Definition</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>\s</b></td>
+                                            <td>Whitespace</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>\S</b></td>
+                                            <td>Not whitespace</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>\d</b></td>
+                                            <td>Digit</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>\D</b></td>
+                                            <td>Not digit</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>\w</b></td>
+                                            <td>Word</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>\W</b></td>
+                                            <td>Not word</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column flex-item-left">
+                                    <h3>Quantifiers</h3>
+                                    <table>
+                                        <tr>
+                                            <th>Tokens</th>
+                                            <th>Definition</th>
+                                            <th>Example</th>
+                                            <th>Explanation</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>*</b></td>
+                                            <td>0 or more</td>
+                                            <td>{3}</td>
+                                            <td>Exactly 3</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>+</b></td>
+                                            <td>1 or more</td>
+                                            <td>{3,}</td>
+                                            <td>3 or more</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>?</b></td>
+                                            <td>0 or 1</td>
+                                            <td>{3,5}</td>
+                                            <td>3, 4 or 5</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4" class="merge">
+                                                Add a ? to a quantifier to make
+                                                ir ungreedy(means if it exists
+                                                then the pattern applies)
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="column flex-item-right">
+                                    <h3>Escape Sequences</h3>
+                                    <table>
+                                        <tr>
+                                            <th>Tokens</th>
+                                            <th>Definition</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>\</b></td>
+                                            <td>Escape following character</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="merge">
+                                                Excaping allows the special
+                                                character to be matched.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <table>
+                                                <th colspan="4">
+                                                    Common Metacharacters
+                                                </th>
 
-                                <tr>
-                                    <td>^</td>
-                                    <td>[</td>
-                                    <td>.</td>
-                                    <td>$</td>
-                                </tr>
-                                <tr>
-                                    <td>&#123;</td>
-                                    <td>*</td>
-                                    <td>&#40;</td>
-                                    <td>&#92;</td>
-                                </tr>
-                                <tr>
-                                    <td>+</td>
-                                    <td>&#41;</td>
-                                    <td>&#124;</td>
-                                    <td>?</td>
-                                </tr>
-                                <tr>
-                                    <td>&lt;</td>
-                                    <td>&gt;</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4">
-                                        The escape character is usually &#92;
-                                    </td>
-                                </tr>
-                            </table>
-                        </tr>
-                    </table>
+                                                <tr>
+                                                    <td>^</td>
+                                                    <td>[</td>
+                                                    <td>.</td>
+                                                    <td>$</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&#123;</td>
+                                                    <td>*</td>
+                                                    <td>&#40;</td>
+                                                    <td>&#92;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>+</td>
+                                                    <td>&#41;</td>
+                                                    <td>&#124;</td>
+                                                    <td>?</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>&lt;</td>
+                                                    <td>&gt;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        The escape character is
+                                                        usually &#92;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column flex-item-left">
+                                    <h3>Pattern Modifiers (Flags)</h3>
+                                    <table>
+                                        <tr>
+                                            <th>Tokens</th>
+                                            <th>Definitions</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>g</b></td>
+                                            <td>
+                                                Global match (Case sensisitive)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>i</b></td>
+                                            <td>Case - Insensitive</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>m</b></td>
+                                            <td>Multiline</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="column flex-item-right">
+                                    <h3>Groups & Ranges</h3>
+                                    <table>
+                                        <tr>
+                                            <th>Tokens</th>
+                                            <th>Definitions</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>.</b></td>
+                                            <td>
+                                                Any character except new line
+                                                (\n)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>(a|b)</b></td>
+                                            <td>a or b</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>(...)</b></td>
+                                            <td>Group</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>(?:...)</b></td>
+                                            <td>
+                                                Non-Capturing (Passive) group
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>[abc]</b></td>
+                                            <td>Range (a or b or c)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>[^abc]</b></td>
+                                            <td>Not (a or b or c)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>[a-q]</b></td>
+                                            <td>
+                                                Lower case letter from a to q
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>[A-Q]</b></td>
+                                            <td>
+                                                Uppercase letter from A to Q
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>[0-7]</b></td>
+                                            <td>Digit from 0 to 7</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                Ranges are inclusive
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column flex-item-left">
+                                    <h3>Special Characters</h3>
+                                    <table>
+                                        <tr>
+                                            <th>Tokens</th>
+                                            <th>Definitions</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>\n</b></td>
+                                            <td>New Line</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>\r</b></td>
+                                            <td>Carriage return</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>\t</b></td>
+                                            <td>Tab</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="column flex-item-right">
+                                    <h3>Assertions</h3>
+                                    <table>
+                                        <tr>
+                                            <th>Tokens</th>
+                                            <th>Definitions</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>?=</b></td>
+                                            <td>Lookahead assertion</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>?!</b></td>
+                                            <td>Negative Lookahead</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>?&gt;=</b></td>
+                                            <td>Lookbehind assertion</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>?!= OR ?&lt;!</b></td>
+                                            <td>Negative lookbehind</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>?()</b></td>
+                                            <td>Condition [if then]</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>?()|</b></td>
+                                            <td>Condition [if then else]</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>?#</b></td>
+                                            <td>Comment</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column flex-item-left">
+                                    <h3>String Replacement</h3>
+                                    <table>
+                                        <tr>
+                                            <th>Tokens</th>
+                                            <th>Definitions</th>
+                                        </tr>
+                                        <tr>
+                                            <td><b>$n</b></td>
+                                            <td>nth non-passive group</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>$2</b></td>
+                                            <td>
+                                                "xyz" in<b
+                                                    >&#47;&#94;(abc(<span
+                                                        style="
+                                                            background-color: lightpink;
+                                                        "
+                                                        >xyz</span
+                                                    >))$</b
+                                                >&#47;
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>$1</b></td>
+                                            <td>
+                                                "xyz" in
+                                                <b
+                                                    >&#47;&#94;(?:abc)(<span
+                                                        style="
+                                                            background-color: lightpink;
+                                                        "
+                                                        >xyz</span
+                                                    >)$&#47;</b
+                                                ><br />(The first group: (?:abc)
+                                                is a non-passive group)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>$`</b></td>
+                                            <td>Before matched string</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>$'</b></td>
+                                            <td>After matched string</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>$+</b></td>
+                                            <td>Last matched string</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>$&</b></td>
+                                            <td>Entire matched string</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                Some RegEx implementations use
+                                                &#92; instead of $
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+            </article>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="footer-column">
+                        <a href="./index.html">Homepage</a>
+                    </div>
+                </div>
+                <hr class="revert" />
+                <div class="row">
+                    <div class="footer-column">
+                        <h3 class="revert">HTML</h3>
+
+                        <br /><a href="./arrayMethods/index.html"
+                            >Array Methods</a
+                        >
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="column flex-item-left">
-                    <h3>Pattern Modifiers (Flags)</h3>
-                    <table>
-                        <tr>
-                            <th>Tokens</th>
-                            <th>Definitions</th>
-                        </tr>
-                        <tr>
-                            <td><b>g</b></td>
-                            <td>Global match (Case sensisitive)</td>
-                        </tr>
-                        <tr>
-                            <td><b>i</b></td>
-                            <td>Case - Insensitive</td>
-                        </tr>
-                        <tr>
-                            <td><b>m</b></td>
-                            <td>Multiline</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="column flex-item-right">
-                    <h3>Groups & Ranges</h3>
-                    <table>
-                        <tr>
-                            <th>Tokens</th>
-                            <th>Definitions</th>
-                        </tr>
-                        <tr>
-                            <td><b>.</b></td>
-                            <td>Any character except new line (\n)</td>
-                        </tr>
-                        <tr>
-                            <td><b>(a|b)</b></td>
-                            <td>a or b</td>
-                        </tr>
-                        <tr>
-                            <td><b>(...)</b></td>
-                            <td>Group</td>
-                        </tr>
-                        <tr>
-                            <td><b>(?:...)</b></td>
-                            <td>Non-Capturing (Passive) group</td>
-                        </tr>
-                        <tr>
-                            <td><b>[abc]</b></td>
-                            <td>Range (a or b or c)</td>
-                        </tr>
-                        <tr>
-                            <td><b>[^abc]</b></td>
-                            <td>Not (a or b or c)</td>
-                        </tr>
-                        <tr>
-                            <td><b>[a-q]</b></td>
-                            <td>Lower case letter from a to q</td>
-                        </tr>
-                        <tr>
-                            <td><b>[A-Q]</b></td>
-                            <td>Uppercase letter from A to Q</td>
-                        </tr>
-                        <tr>
-                            <td><b>[0-7]</b></td>
-                            <td>Digit from 0 to 7</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">Ranges are inclusive</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column flex-item-left">
-                    <h3>Special Characters</h3>
-                    <table>
-                        <tr>
-                            <th>Tokens</th>
-                            <th>Definitions</th>
-                        </tr>
-                        <tr>
-                            <td><b>\n</b></td>
-                            <td>New Line</td>
-                        </tr>
-                        <tr>
-                            <td><b>\r</b></td>
-                            <td>Carriage return</td>
-                        </tr>
-                        <tr>
-                            <td><b>\t</b></td>
-                            <td>Tab</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="column flex-item-right">
-                    <h3>Assertions</h3>
-                    <table>
-                        <tr>
-                            <th>Tokens</th>
-                            <th>Definitions</th>
-                        </tr>
-                        <tr>
-                            <td><b>?=</b></td>
-                            <td>Lookahead assertion</td>
-                        </tr>
-                        <tr>
-                            <td><b>?!</b></td>
-                            <td>Negative Lookahead</td>
-                        </tr>
-                        <tr>
-                            <td><b>?&gt;=</b></td>
-                            <td>Lookbehind assertion</td>
-                        </tr>
-                        <tr>
-                            <td><b>?!= OR ?&lt;!</b></td>
-                            <td>Negative lookbehind</td>
-                        </tr>
-                        <tr>
-                            <td><b>?()</b></td>
-                            <td>Condition [if then]</td>
-                        </tr>
-                        <tr>
-                            <td><b>?()|</b></td>
-                            <td>Condition [if then else]</td>
-                        </tr>
-                        <tr>
-                            <td><b>?#</b></td>
-                            <td>Comment</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column flex-item-left">
-                    <h3>String Replacement</h3>
-                    <table>
-                        <tr>
-                            <th>Tokens</th>
-                            <th>Definitions</th>
-                        </tr>
-                        <tr>
-                            <td><b>$n</b></td>
-                            <td>nth non-passive group</td>
-                        </tr>
-                        <tr>
-                            <td><b>$2</b></td>
-                            <td>
-                                "xyz" in<b
-                                    >&#47;&#94;(abc(<span
-                                        style="background-color: lightpink"
-                                        >xyz</span
-                                    >))$</b
-                                >&#47;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>$1</b></td>
-                            <td>
-                                "xyz" in
-                                <b
-                                    >&#47;&#94;(?:abc)(<span
-                                        style="background-color: lightpink"
-                                        >xyz</span
-                                    >)$&#47;</b
-                                ><br />(The first group: (?:abc) is a
-                                non-passive group)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>$`</b></td>
-                            <td>Before matched string</td>
-                        </tr>
-                        <tr>
-                            <td><b>$'</b></td>
-                            <td>After matched string</td>
-                        </tr>
-                        <tr>
-                            <td><b>$+</b></td>
-                            <td>Last matched string</td>
-                        </tr>
-                        <tr>
-                            <td><b>$&</b></td>
-                            <td>Entire matched string</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                Some RegEx implementations use &#92; instead of
-                                $
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <script src="snippets-regex.js"></script>
-        <script src="prism.js"></script>
+        </footer>
+        <script src="./nav-menu.js"></script>
     </body>
 </html>
